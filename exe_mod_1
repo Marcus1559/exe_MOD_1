@@ -1,0 +1,6 @@
+let nome = "Marcus Alexandre";
+let idade = 21;
+let estadoCivil = false; // false para solteiro
+console.log("Nome: " + nome);
+console.log("Idade: " + idade);
+console.log("Estado Civil: " + (estadoCivil ? "Casado(a)" : "Solteiro(a)"));
