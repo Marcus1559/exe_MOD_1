@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"], input[type="number"], input[type="checkbox"] {
+            margin-bottom: 10px;
+        }
+        #resultado {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulário de Informações</h1>
+    <form id="infoForm">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" name="idade" required>
+
+        <label for="estadoCivil">Você é casado(a)?</label>
+        <input type="checkbox" id="estadoCivil" name="estadoCivil">
+
+        <button type="button" onclick="processarInformacoes()">Enviar</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+        function processarInformacoes() {
+            var nome = document.getElementById("nome").value;
+            var idade = parseInt(document.getElementById("idade").value, 10);
+            var estadoCivil = document.getElementById("estadoCivil").checked;
+
+            var idadeFutura = idade + 5; 
+            var idadeAnterior = idade - 5; 
+
+            var estadoCivilTexto = estadoCivil ? 'Casado(a)' : 'Solteiro(a)';
+
+            
+            var resultadoDiv = document.getElementById("resultado");
+            resultadoDiv.innerHTML = `
+                <h2>Informações fornecidas:</h2>
+                <p><strong>Nome:</strong> ${nome}</p>
+                <p><strong>Idade:</strong> ${idade}</p>
+                <p><strong>Estado Civil:</strong> ${estadoCivilTexto}</p>
+                <p><strong>Idade em 5 anos:</strong> ${idadeFutura}</p>
+                <p><strong>Idade há 5 anos:</strong> ${idadeAnterior}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
