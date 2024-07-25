@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function verificarSenha() {
+            
+            var senha = document.getElementById("senha").value;
+            
+            
+            var mensagem = document.getElementById("mensagem");
+
+            
+            if (senha === "1234") {
+                mensagem.textContent = "ACESSO PERMITIDO";
+                mensagem.style.color = "green";
+            } else {
+                mensagem.textContent = "ACESSO NEGADO";
+                mensagem.style.color = "red";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Verificação de Senha</h1>
+    <label for="senha">Digite a senha:</label>
+    <input type="password" id="senha" name="senha">
+    <button onclick="verificarSenha()">Verificar</button>
+    <p id="mensagem"></p>
+</body>
+</html>
