@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input, button {
+            margin: 10px;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificação de Permissão de Usuário</h1>
+    <label for="permissao">Digite o tipo de permissão (Comum, Gerente, Diretor):</label>
+    <input type="text" id="permissao" placeholder="Ex.: Comum">
+    <button onclick="verificarPermissao()">Verificar Permissão</button>
+    <div id="resultado"></div>
+
+    <script>
+        function verificarPermissao() {
+            var permissao = document.getElementById('permissao').value.trim();
+            var resultado = document.getElementById('resultado');
+            var mensagem;
+
+            switch (permissao) {
+                case 'Comum':
+                    mensagem = 'Permissão concedida: Usuário Comum.';
+                    break;
+                case 'Gerente':
+                    mensagem = 'Permissão concedida: Usuário Gerente.';
+                    break;
+                case 'Diretor':
+                    mensagem = 'Permissão concedida: Usuário Diretor.';
+                    break;
+                default:
+                    mensagem = 'Tipo de permissão inválido.';
+            }
+
+            resultado.textContent = mensagem;
+        }
+    </script>
+</body>
+</html>
