@@ -1,0 +1,7 @@
+const notas = [8.5, 7.0, 9.0];
+
+const soma = notas.reduce((acc, nota) => acc + nota, 0);
+
+const media = soma / notas.length;
+
+console.log("A média das notas é: " + media);
