@@ -1,0 +1,5 @@
+const array = ['Maçã', 'Banana', 'Cereja'];
+
+const primeirasLetras = array.map(item => item.slice(0, 1));
+
+console.log(primeirasLetras);
